@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: npm-registry-follower
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: npm-registry-follower
+  template:
+    metadata:
+      labels:
+        app: npm-registry-follower
+    spec:
+      containers:
+        - name: npm-registry-follower
+          image: ghcr.io/kirupakaran/npm-registry-follower:main
