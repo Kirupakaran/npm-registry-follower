@@ -1,0 +1,14 @@
+{
+  "name": "npm-registry-follower",
+  "version": "1.0.0",
+  "description": "Follow npm registry",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kirupakaranh@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "nano": "^10.1.2"
+  }
+}
