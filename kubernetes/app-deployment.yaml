@@ -15,6 +15,7 @@ spec:
       containers:
         - name: npm-registry-follower
           image: ghcr.io/kirupakaran/npm-registry-follower:main
+          imagePullPolicy: Always
           env:
             - name: POSTGRES_DB
               value: registry

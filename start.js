@@ -5,9 +5,9 @@ const postgresConn = `postgres://${process.env.POSTGRES_USER}:${process.env.POST
 const sequelize = new Sequelize(postgresConn)
 const db = nano.db.use('registry')
 
-function testConnection() {
+async function testConnection() {
   try {
-    sequelize.authenticate()
+    await sequelize.authenticate()
     console.log('Connection has been established successfully.');
   } catch (error) {
     console.error('Unable to connect to the database:', error);
