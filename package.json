@@ -4,7 +4,7 @@
   "description": "Follow npm registry",
   "main": "start.js",
   "scripts": {
-    "prestart": "sequelize db:migrate",
+    "prestart": "sequelize-cli db:migrate",
     "start": "node start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
