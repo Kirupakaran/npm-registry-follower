@@ -4,7 +4,7 @@ COPY ./package.json ./package-lock.json /app/src/
 
 WORKDIR /app/src
 
-RUN npm ci --only production --verbose
+RUN npm ci
 
 FROM node:20 as run
 
