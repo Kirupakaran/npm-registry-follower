@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Package.init({
-    name: DataTypes.STRING,
-    readme: DataTypes.TEXT
+    name: { type: DataTypes.STRING, allowNull: false, unique: true },
+    readme: { type: DataTypes.TEXT, allowNull: true },
   }, {
     sequelize,
     modelName: 'Package',
