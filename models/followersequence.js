@@ -1,8 +1,9 @@
 'use strict';
 const {
-  Model
+  Model,
+  DataTypes
 } = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize) => {
   class FollowerSequence extends Model {
     /**
      * Helper method for defining associations.
