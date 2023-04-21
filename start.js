@@ -1,19 +1,18 @@
 const nano = require('nano')('https://replicate.npmjs.com')
-const { default: pino } = require('pino');
 const { Sequelize } = require('sequelize');
 const logger = require('pino')()
 
 const postgresConn = `postgres://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_URL}:${process.env.POSTGRES_PORT}/${process.env.POSTGRES_DB}`
 
-const sequelize = new Sequelize(postgresConn, { logging: logger.info })
+const sequelize = new Sequelize(postgresConn, { logging: console.log })
 const db = nano.db.use('registry')
 
 async function testConnection() {
   try {
     await sequelize.authenticate()
-    logger.info('Connection established successfully.')
+    console.log('Connection has been established successfully.')
   } catch (error) {
-    logger.error({ error }, 'Connection failed')
+    console.error('Unable to connect to the database:', error)
     throw error
   }
 }
@@ -35,7 +34,7 @@ function start() {
     })
 }
 testConnection().then(start).catch((e) => {
-  logger.error({ error: e }, 'Failed')
+  logger.error('exiting on failure', e)
   process.exit(1)
 })
 
