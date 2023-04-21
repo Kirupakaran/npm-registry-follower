@@ -1,6 +1,5 @@
 const nano = require('nano')('https://replicate.npmjs.com')
-const { Sequelize } = require('sequelize');
-const logger = require('pino')()
+const { Sequelize } = require('sequelize')
 
 const postgresConn = `postgres://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_URL}:${process.env.POSTGRES_PORT}/${process.env.POSTGRES_DB}`
 
@@ -34,7 +33,7 @@ function start() {
     })
 }
 testConnection().then(start).catch((e) => {
-  logger.error('exiting on failure', e)
+  logger.error('exiting on failure',e)
   process.exit(1)
 })
 
