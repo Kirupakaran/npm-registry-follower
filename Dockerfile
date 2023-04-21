@@ -18,4 +18,4 @@ RUN useradd --create-home --user-group npm
 
 USER npm
 
-ENTRYPOINT [ "node", "start.js"]
+ENTRYPOINT [ "npm", "run", "start"]

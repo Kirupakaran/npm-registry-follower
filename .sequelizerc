@@ -1,0 +1,6 @@
+const postgresConn = `postgres://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_URL}:${process.env.POSTGRES_PORT}/${process.env.POSTGRES_DB}`
+
+module.exports = {
+  'env': process.env.NODE_ENV || 'production',
+  'url': postgresConn
+}

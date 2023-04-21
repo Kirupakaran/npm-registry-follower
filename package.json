@@ -4,6 +4,8 @@
   "description": "Follow npm registry",
   "main": "start.js",
   "scripts": {
+    "prestart": "sequelize db:migrate",
+    "start": "node start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "kirupakaranh@gmail.com",
@@ -12,6 +14,10 @@
     "nano": "^10.1.2",
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
+    "pino": "^8.11.0",
     "sequelize": "^6.31.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.0"
   }
 }
