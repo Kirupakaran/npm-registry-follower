@@ -14,7 +14,7 @@ COPY ./start.js /app/src/
 
 COPY ./package.json /app/src/
 
-COPY ./sequelizerc /app/src/
+COPY ./.sequelizerc /app/src/
 
 WORKDIR /app/src
 
