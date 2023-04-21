@@ -12,6 +12,8 @@ COPY --from=build /app/src/node_modules /app/src/node_modules
 
 COPY ./start.js /app/src/start.js
 
+COPY ./package.json /app/src/
+
 WORKDIR /app/src
 
 RUN useradd --create-home --user-group npm
