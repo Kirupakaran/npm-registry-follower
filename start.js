@@ -13,7 +13,7 @@ async function testConnection() {
     await sequelize.authenticate()
     logger.info('Connection established successfully.')
   } catch (error) {
-    logger.error('Connection failed', error)
+    logger.error({ error }, 'Connection failed')
     throw error
   }
 }
@@ -35,7 +35,7 @@ function start() {
     })
 }
 testConnection().then(start).catch((e) => {
-  logger.error('Error', e)
+  logger.error({ error: e, 'Failed'})
   process.exit(1)
 })
 
