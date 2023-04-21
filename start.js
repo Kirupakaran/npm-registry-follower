@@ -28,6 +28,7 @@ async function start() {
   const seqRows = await Sequence.findAll()
   if (seqRows.length > 0) {
     seq = seqRows[0]
+    lastSequence = seq.sequence
   } else {
     seq = await Sequence.create({ sequence: 0 })
   }
@@ -47,6 +48,10 @@ async function start() {
             readme: data.readme
           }
         } catch (err) {
+          if (err.response && err.response.status === 404) {
+            console.log('package not found', doc.id)
+            return {}
+          }
           console.error('error fetching package', err)
           return {
             name: doc.id,
