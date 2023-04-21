@@ -38,3 +38,16 @@ spec:
         - name: pgdata
           persistentVolumeClaim:
             claimName: postgres-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+spec:
+  selector:
+    app: postgres
+  ports:
+    - name: db-port
+      port: 5432
+      targetPort: 5432
+  type: ClusterIP

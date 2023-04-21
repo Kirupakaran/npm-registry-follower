@@ -1,4 +1,4 @@
-FROM node:19 as build
+FROM node:20 as build
 
 COPY ./package.json ./package-lock.json /app/src/
 
@@ -6,7 +6,7 @@ WORKDIR /app/src
 
 RUN npm ci --only production --verbose
 
-FROM node:19 as run
+FROM node:20 as run
 
 COPY --from=build /app/src/node_modules /app/src/node_modules
 
