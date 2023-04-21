@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class npm - registry extends Model {
+  class Package extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,12 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  npm - registry.init({
-    packageName: DataTypes.STRING,
+  Package.init({
+    name: DataTypes.STRING,
     readme: DataTypes.TEXT
   }, {
     sequelize,
-    modelName: 'npm-registry',
+    modelName: 'Package',
   });
-  return npm - registry;
+  return Package;
 };

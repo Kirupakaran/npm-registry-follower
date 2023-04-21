@@ -2,14 +2,14 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('npm-registries', {
+    await queryInterface.createTable('Packages', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      packageName: {
+      name: {
         type: Sequelize.STRING
       },
       readme: {
@@ -26,6 +26,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('npm-registries');
+    await queryInterface.dropTable('Packages');
   }
 };
