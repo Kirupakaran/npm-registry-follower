@@ -35,7 +35,7 @@ function start() {
     })
 }
 testConnection().then(start).catch((e) => {
-  logger.error({ error: e, 'Failed'})
+  logger.error({ error: e }, 'Failed')
   process.exit(1)
 })
 
